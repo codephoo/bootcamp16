@@ -8,8 +8,12 @@ function NotesApplication(author) {
 	this.author=verifyAuthor(author) ;
 	this.notes=[];
 	this.create= function(note_content){
-		
+		if(typeof note_content== typeof '' && note_content != ''){
 			this.notes.push(note_content);
+		}
+		else{
+			return "Invalid input"
+		}
 
 	};
 	/*
