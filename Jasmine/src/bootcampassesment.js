@@ -42,7 +42,7 @@ function NotesApplication(author) {
 	Gets a single notes using the note_id argument as index
 	*/
 	this.get= function(note_id) {
-		if(typeof note_id==typeof 1) {
+		if(typeof note_id==typeof 1 && note_id < this.notes.length) {
 			return this.notes[note_id];
 		}
 		else{

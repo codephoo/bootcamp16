@@ -21,9 +21,9 @@ describe("list notes", function() {
 });
 
 describe("Get a note with a specific id", function() {
-    it("should be undefined", function() {
+    it("should return invalid note id", function() {
         var note = new NotesApplication('Alex');
-        expect(note.get(0)).toBe(undefined);
+        expect(note.get(0)).toBe('Invalid note id');
   });
     it("should be the same as created note", function() {
         var note = new NotesApplication('shola');
@@ -35,10 +35,10 @@ describe("Get a note with a specific id", function() {
         note.create('My name is Shola Abaogun');
         expect(typeof note.get(0)).toBe(typeof '');
   });
-    it("should return index out of range", function() {
+    it("should return invalid note id", function() {
         var note = new NotesApplication('shola');
         note.create('My name is Shola Abaogun');
-        expect(note.get(1)).toBe('Index out of range');
+        expect(note.get(1)).toBe('Invalid note id');
   });
 
 });
